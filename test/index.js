@@ -1,8 +1,29 @@
 const expect = require('chai').expect;
+// const proxyquire = require('proxyquire');
+const nock = require('nock');
 
-describe('my thing', function () {
-  it('should work', function () {
-    expect(true).to.be.true;
-    throw new Error('unimplemented');
+describe('videoblocks', function () {
+  it('should throw on invalid config', function () {
+    expect(require('..')).to.throw();
+  });
+
+  it('should provide a function you can use to make requests', function () {
+    const videoblocks = require('..')({
+      publicKey: 'public',
+      privateKey: 'private'
+    });
+    expect(videoblocks).to.be.a('function');
+  });
+
+  it('should auth requests', function () {
+    nock('https://api.videoblocks.com')
+      .get('/endpoint')
+      .query((qs) => qs.apikey && qs.expires && qs.hmac)
+      .reply(200, {});
+    const videoblocks = require('..')({
+      publicKey: 'public',
+      privateKey: 'private'
+    });
+    return videoblocks('/endpoint');
   });
 });

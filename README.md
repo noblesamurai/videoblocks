@@ -3,20 +3,42 @@
 > Iteract with videoblocks API.
 
 ## Purpose
-- What problem does this module solve? At least a few sentences.
-PLEASE_FILL_IN_HERE
+
+Gives a wrapped version of
+[request-promise-native](https://github.com/request/request-promise-native)
+that is authed with your videoblocks credentials so you can conveniently make
+calls to the videoblocks API.
 
 ## Usage
 
 ```js
-// Several examples of usage.
-// Usually copying and pasting code from the tests and making the code standalone suffices.
-// PLEASE_FILL_IN_HERE
+const videoblocks = require('videoblocks')({
+  publicKey: 'public',
+  privateKey: 'private'
+});
+
+const response = await videoblocks('/endpoint');
+console.log(response);
 ```
 
 ## API
 
-PLEASE_FILL_IN_HERE
+<a name="videoblocks
+Returns a wrapped version of request-promise-native that is authed to
+interact with videoblocks API.module_"></a>
+
+## videoblocks
+Returns a wrapped version of request-promise-native that is authed to
+interact with videoblocks API. ⇒ <code>function</code>
+- config
+  - config.privateKey
+  - config.publicKey
+- endpoint - the endpoint you wish to use, e.g. '/api/v1/stock-items/search'
+- opts - additional options for request-native-promise.  These will take
+  precedence over anything we derive.
+
+**Returns**: <code>function</code> - function(endpoint, opts)
+**Params**: <code>object</code> config
 
 Note: To regenerate this section from the jsdoc run `npm run docs` and paste
 the output above.
