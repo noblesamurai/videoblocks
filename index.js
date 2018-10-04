@@ -22,7 +22,7 @@ function auth (config, endpoint) {
   const expires = Math.floor(Date.now() / 1000);
   const hmac = crypto.createHmac('sha256', config.privateKey + expires);
   hmac.update(endpoint);
-  return { expires, hmac: hmac.digest('hex'), apikey: config.publicKey };
+  return { EXPIRES: expires, HMAC: hmac.digest('hex'), APIKEY: config.publicKey };
 }
 
 /**

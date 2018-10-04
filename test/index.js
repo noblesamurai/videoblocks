@@ -18,7 +18,7 @@ describe('videoblocks', function () {
   it('should auth requests', function () {
     nock('https://api.videoblocks.com')
       .get('/endpoint')
-      .query((qs) => qs.apikey && qs.expires && qs.hmac)
+      .query((qs) => qs.APIKEY && qs.EXPIRES && qs.HMAC)
       .reply(200, {});
     const videoblocks = require('..')({
       publicKey: 'public',
