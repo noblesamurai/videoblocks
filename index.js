@@ -44,7 +44,7 @@ module.exports = function (config) {
   assert(config.publicKey, 'must specify public key');
   return function (endpoint, options) {
     const rpOpts = defaultsDeep(
-      options, // prefer use opts over generated ones
+      options, // prefer user opts over generated ones
       rpOptions(endpoint),
       { qs: auth(config, endpoint) }
     );
