@@ -1,7 +1,7 @@
 {
   "name": "videoblocks",
   "description": "Iteract with videoblocks API.",
-  "version": "0.0.1",
+  "version": "1.0.0-init.1",
   "author": "Tim Allen <tim@noblesamurai.com>",
   "license": "BSD",
   "main": "index.js",
@@ -24,14 +24,20 @@
     "node": "8.x",
     "npm": "5.x"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash.defaultsdeep": "^4.6.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "dirty-chai": "^1.2.2",
+    "jsdoc-to-markdown": "^4.0.0",
     "mocha": "^5.2.0",
+    "nock": "^10.0.0",
     "nyc": "^12.0.2",
-    "semistandard": "*",
-    "jsdoc-to-markdown": "^4.0.0"
+    "proxyquire": "^2.1.0",
+    "semistandard": "*"
   },
   "keywords": [],
   "nyc": {
