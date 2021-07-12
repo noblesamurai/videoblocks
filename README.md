@@ -9,6 +9,18 @@ Gives a wrapped version of
 that is authed with your videoblocks credentials so you can conveniently make
 calls to the videoblocks API.
 
+## Prerequisites
+
+```
+$ pip install pre-commit
+```
+
+## Installation
+
+```
+$ pre-commit install --install-hooks
+```
+
 ## Usage
 
 ```js
